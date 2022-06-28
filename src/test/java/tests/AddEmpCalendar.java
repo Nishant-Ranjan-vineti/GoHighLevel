@@ -5,14 +5,13 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import pages.LoginPageAndCreateTeam;
-import pages.myTeamPage;
 
-public class LoginAndCreateTeam {
+public class AddEmpCalendar {
 
 	WebDriver driver;
 
 	@Test
-	public void test1() throws InterruptedException {
+	public void EndToEnd() throws InterruptedException {
 		LoginPageAndCreateTeam dr = new LoginPageAndCreateTeam(driver);
 		dr.setUp();
 		dr.loginToHighLevel();
@@ -26,11 +25,5 @@ public class LoginAndCreateTeam {
 		dr.scrollToSaveAvailability();
 		dr.scrollToComplete();
 	}
-	
-//	@Test
-//	public void test2() {
-//		myTeamPage tm = new myTeamPage(driver);
-//		tm.createTeam();
-//	}
 
 }

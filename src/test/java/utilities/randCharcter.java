@@ -1,18 +1,13 @@
 package utilities;
 
+import java.util.Random;
+
 import org.apache.commons.lang3.RandomStringUtils;
 
-public class randomString {
+public class randCharcter {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		randString();
-
-	}
-
-	public static String randString() {
-		int length = 12;
+	public static String randChar() {
+		int length = 1;
 		boolean useLetters = true;
 		boolean useNumbers = false;
 		String generatedString = RandomStringUtils.random(length, useLetters, useNumbers);
@@ -20,5 +15,11 @@ public class randomString {
 		System.out.println(generatedString);
 		return generatedString;
 	}
+	
+	public static void main(String[] args) {
+		randChar();
+	}
+
+
 
 }

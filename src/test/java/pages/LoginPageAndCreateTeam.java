@@ -113,8 +113,21 @@ public class LoginPageAndCreateTeam {
 	By calendarSlug = By.xpath("//input[@placeholder='Enter Calendar Slug']");
 	By saveCalendarButton = By.xpath("//button[@id='cmp-calmodal__button--save']");
 
+	By appointmentSlotSetting = By.xpath("//div[contains(text(), 'Appointment Slot Settings')]");
 
+	By slotDuration = By.xpath("//*[@id=\"app\"]/div[3]/section/div/div[2]/div/div/div/form/div[2]/div[2]/div[2]/section[1]/div[3]/div[1]/div/div/button");
+	By slotInterval = By.xpath("//*[@id=\"app\"]/div[3]/section/div/div[2]/div/div/div/form/div[2]/div[2]/div[2]/section[1]/div[3]/div[2]/div/div/button");
+	By slotDuration1Hr = By.xpath("//div[@aria-expanded='true']//span[@class='text'][normalize-space()='1 hour']");
+	By slotInterval45Min = By.xpath("//div[@aria-expanded='true']//span[@class='text'][normalize-space()='45 minutes']");
+	By bufferDuration = By.xpath("//input[@placeholder='Duration in Minutes']");
+	By appointmentPerDay = By.xpath("//input[@name='appoinmentPerDay']");
 
+	By minimumSchedulingNotice = By.xpath("(//input[@placeholder='Duration'])[1]");
+	By schedulingNoticeType = By.xpath("//*[@id=\"app\"]/div[3]/section/div/div[2]/div/div/div/form/div[2]/div[2]/div[2]/section[2]/div[3]/div[1]/div/div/div/button");
+	By schedulingNoticeDay = By.xpath("//div[@aria-expanded='true']//span[@class='text'][normalize-space()='Weeks']");
+	By dateRange = By.xpath("(//input[@placeholder='Duration'])[2]");
+	By dateRangeType = By.xpath("//*[@id=\"app\"]/div[3]/section/div/div[2]/div/div/div/form/div[2]/div[2]/div[2]/section[2]/div[3]/div[2]/div/div/div/button");
+	By dateRangeDay = By.xpath("//div[@aria-expanded='true']//span[@class='text'][normalize-space()='Weeks']");
 
 
 	public void setUp() {
@@ -126,7 +139,7 @@ public class LoginPageAndCreateTeam {
 		//		WebDriverManager.chromedriver().setup();
 		//		driver = new ChromeDriver(options);
 		driver = new FirefoxDriver(options);
-		driver.manage().window().maximize();
+		driver.manage().window().fullscreen();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 
@@ -241,19 +254,7 @@ public class LoginPageAndCreateTeam {
 		je.executeScript("arguments[0].scrollIntoView(true)", saveCalendarB );
 		saveCalendarB.click();
 	}
-	By appointmentSlotSetting = By.xpath("//div[contains(text(), 'Appointment Slot Settings')]");
-	By slotDuration = By.xpath("//div[@class='dropdown bootstrap-select input-medium']//button[@title='30 minutes']");
-	By slotInterval = By.xpath("//div[@class='dropdown bootstrap-select input-medium pristine untouched valid']//button[@title='30 minutes']");
-	By slotDuration1Hr = By.xpath("//div[@aria-expanded='true']//span[@class='text'][normalize-space()='1 hour']");
-	By slotInterval45Min = By.xpath("//div[@aria-expanded='true']//span[@class='text'][normalize-space()='45 minutes']");
-	By bufferDuration = By.xpath("//input[@placeholder='Duration in Minutes']");
-	By appointmentPerDay = By.xpath("//input[@name='appoinmentPerDay']");
-	By minimumSchedulingNotice = By.xpath("(//input[@placeholder='Duration'])[1]");
-	By schedulingNoticeType = By.xpath("//button[@title='Hours']");
-	By schedulingNoticeDay = By.xpath("//a[@class='dropdown-item']//span[@class='text'][normalize-space()='Days']");
-	By dateRange = By.xpath("(//input[@placeholder='Duration'])[2]");
-	By dateRangeType = By.xpath("//button[@title='Days']");
-	By dateRangeDay = By.xpath("//div[@aria-expanded='true']//span[@class='text'][normalize-space()='Weeks']");
+
 
 	public void setUpAvailability() {
 		wt.waitForElement(appointmentSlotSetting, Duration.ofSeconds(5));
@@ -263,13 +264,17 @@ public class LoginPageAndCreateTeam {
 
 		driver.findElement(slotInterval).click();
 		driver.findElement(slotInterval45Min).click();
+		driver.findElement(bufferDuration).clear();
 		driver.findElement(bufferDuration).sendKeys("15");
+		driver.findElement(appointmentPerDay).clear();
 		driver.findElement(appointmentPerDay).sendKeys("4");
-		
+
+		driver.findElement(minimumSchedulingNotice).clear();
 		driver.findElement(minimumSchedulingNotice).sendKeys("10");
 		driver.findElement(schedulingNoticeType).click();
 		driver.findElement(schedulingNoticeDay).click();
-		
+
+		driver.findElement(dateRange).clear();
 		driver.findElement(dateRange).sendKeys("5");
 		driver.findElement(dateRangeType).click();
 		driver.findElement(dateRangeDay).click();
@@ -289,6 +294,11 @@ public class LoginPageAndCreateTeam {
 		JavascriptExecutor je = (JavascriptExecutor) driver;
 		je.executeScript("arguments[0].scrollIntoView(true)", completeSetup );
 		completeSetup.click();
+		wt.waitForElement(By.xpath("//label[@class='mb-0 mr-2 title']"), Duration.ofSeconds(10));
+	}
+
+	public void bookAppointment() {
+
 	}
 
 

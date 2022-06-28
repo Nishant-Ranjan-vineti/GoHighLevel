@@ -1,8 +1,10 @@
 package tests;
 
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -171,15 +173,26 @@ public class test2 {
 		
 		driver.findElement(By.xpath("//input[@name='appoinmentPerDay']")).sendKeys("4");
 		
-		WebElement saveAvailability = driver.findElement(By.xpath("//button[@id='cmp-calmodal__button--save']"));
+		WebElement saveAvailability = driver.findElement(By.id("cmp-calmodal__button--edit"));
 		je.executeScript("arguments[0].scrollIntoView(true)", saveAvailability );
 		saveAvailability.click();
 		
 		wt.waitForElement(By.xpath("//div[normalize-space()='Form Settings']"), Duration.ofSeconds(5));
 		
-		WebElement completeSetup = driver.findElement(By.xpath("//button[@id='cmp-calmodal__button--save']"));
+		WebElement completeSetup = driver.findElement(By.id("cmp-calmodal__button--edit"));
 		je.executeScript("arguments[0].scrollIntoView(true)", completeSetup );
 		completeSetup.click();
+		
+		
+		
+		
+		
+		//switch tab
+		Set<String> windowHandles = driver.getWindowHandles();
+		List<String> windowHandlesList = new ArrayList<String>(windowHandles);
+
+		System.out.println("Total window number: " + windowHandlesList.size() + "\n");
+		driver.switchTo().window(windowHandlesList.get(1));
 		
 		
 		
