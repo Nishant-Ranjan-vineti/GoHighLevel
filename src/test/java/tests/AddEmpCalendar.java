@@ -2,10 +2,13 @@ package tests;
 
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pages.LoginPageAndCreateTeam;
 
+
+@Listeners (listeners.TestNGListener.class)
 public class AddEmpCalendar {
 
 	WebDriver driver;

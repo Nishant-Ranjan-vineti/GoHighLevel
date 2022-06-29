@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import utilities.GenericMethod;
@@ -21,6 +22,7 @@ import utilities.randomPassword;
 import utilities.randomPhone;
 import utilities.randomString;
 
+@Listeners (listeners.TestNGListener.class)
 public class BookAppointment {
 	
 	WebDriver driver;

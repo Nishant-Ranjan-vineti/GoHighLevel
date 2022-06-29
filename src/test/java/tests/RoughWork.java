@@ -24,7 +24,7 @@ import utilities.randomPassword;
 import utilities.randomPhone;
 import utilities.randomString;
 
-public class test2 {
+public class RoughWork {
 
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver driver;
