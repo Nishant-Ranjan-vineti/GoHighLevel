@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.AddEmpCalendar">
+      <class name="tests.BookAppointment">
         <methods>
-          <include name="EndToEnd"/>
+          <include name="createAndVerifyAppointment"/>
         </methods>
-      </class> <!-- tests.AddEmpCalendar -->
+      </class> <!-- tests.BookAppointment -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

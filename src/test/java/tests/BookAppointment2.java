@@ -22,6 +22,11 @@ import utilities.randomPassword;
 import utilities.randomPhone;
 import utilities.randomString;
 
+/**
+ * @author nishantranjan
+ *
+ */
+
 @Listeners (listeners.TestNGListener.class)
 public class BookAppointment2 {
 
@@ -55,7 +60,7 @@ public class BookAppointment2 {
 
 
 	@Test
-	public void test1() throws InterruptedException {
+	public void createAndVerifyAppointment() throws InterruptedException {
 
 		FirefoxOptions options = new FirefoxOptions();
 		options.addPreference("dom.webnotifications.enabled", false);

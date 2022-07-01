@@ -22,6 +22,11 @@ import utilities.randomPassword;
 import utilities.randomPhone;
 import utilities.randomString;
 
+/**
+ * @author nishantranjan
+ *
+ */
+
 @Listeners (listeners.TestNGListener.class)
 public class BookAppointment {
 	
@@ -43,7 +48,7 @@ public class BookAppointment {
 	String logo = "//img[@class='object-contain agency-logo']";
 	String settingLink = "//span[normalize-space()='Settings']";
 	String calendars = "//a[@id='sb_calendar']";
-	String teamCalendarLink = "//*[@id=\"card_view_container\"]/div[2]/div/div[2]/div[2]/div/div[4]/button";
+	String teamCalendarLink = "//*[@id=\"card_view_container\"]/div[3]/div/div[2]/div[2]/div/div[4]/button";
 	String calendarPage = "//*[@id=\"appointment_widgets\"]/div/div/div/div[1]/div[1]";
 	String nextMonthLink = "//button[@title='Next month']";
 	String weekCol = "//*[@id=\"appointment_widgets\"]/div/div/div/div[2]/div/div[1]/div/div[1]/div/div/table/thead/tr";
