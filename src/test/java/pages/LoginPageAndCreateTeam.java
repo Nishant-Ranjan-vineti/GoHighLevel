@@ -302,10 +302,6 @@ public class LoginPageAndCreateTeam {
 		wt.waitForElement(By.xpath("//label[@class='mb-0 mr-2 title']"), Duration.ofSeconds(10));
 	}
 
-	public void bookAppointment() {
-
-	}
-
 
 
 }

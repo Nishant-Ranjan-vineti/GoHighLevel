@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-07-01T13:55:07 IST" name="Default suite" finished-at="2022-07-01T13:55:49 IST" duration-ms="42977">
+  <suite started-at="2022-07-02T18:29:52 IST" name="Default suite" finished-at="2022-07-02T18:30:57 IST" duration-ms="64765">
     <groups>
     </groups>
-    <test started-at="2022-07-01T13:55:07 IST" name="Default test" finished-at="2022-07-01T13:55:49 IST" duration-ms="42977">
-      <class name="tests.BookAppointment">
-        <test-method signature="createAndVerifyAppointment()[pri:0, instance:tests.BookAppointment@6a01e23]" started-at="2022-07-01T13:55:07 IST" name="createAndVerifyAppointment" finished-at="2022-07-01T13:55:49 IST" duration-ms="42936" status="PASS">
+    <test started-at="2022-07-02T18:29:52 IST" name="Default test" finished-at="2022-07-02T18:30:57 IST" duration-ms="64765">
+      <class name="tests.BookAppointmentCloud">
+        <test-method signature="createAndVerifyAppointment()[pri:0, instance:tests.BookAppointmentCloud@7fc2413d]" started-at="2022-07-02T18:29:52 IST" name="createAndVerifyAppointment" finished-at="2022-07-02T18:30:57 IST" duration-ms="64707" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAndVerifyAppointment -->
-      </class> <!-- tests.BookAppointment -->
+      </class> <!-- tests.BookAppointmentCloud -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
