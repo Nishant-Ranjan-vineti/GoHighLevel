@@ -8,10 +8,10 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -28,15 +28,11 @@ import utilities.randomString;
  */
 
 @Listeners (listeners.TestNGListener.class)
-public class BookAppointment3 {
+public class BookAppointment2 {
 	
-	public RemoteWebDriver driver;
-    public String username = "nishantranjan78";
-    public String accesskey = "oyQ4WfFrpdv7KEWzvdaZzvw69LPgVJxbS9CbHIkWpminX6fepk";
-    public String gridURL = "hub.lambdatest.com";
-    public String hub;
 	
-	//WebDriver driver;
+	
+	WebDriver driver;
 	GenericMethod wt;
 	String baseUrl = "https://app.gohighlevel.com";
 	randomString randString = null;
@@ -66,7 +62,7 @@ public class BookAppointment3 {
 	String email = "//input[@placeholder='Email']";
 	String desc = "//textarea[@placeholder='Is there anything you would like us to know before your appointment?']";
 	String schedule = "//button[@class='btn btn-schedule']";
-	String timezone = "//*[@id=\"appointment_widgets\"]/div/div/div/div[2]/div/div[1]/div/div[2]/div/div[3]/ul/li[6]/span/div/span[1]";
+	String timezone = "//*[@id=\"appointment_widgets\"]/div/div/div/div[2]/div/div[1]/div/div[2]/div/div[3]/ul/li[3]/span/div/span[1]";
 	String backButton = "//div[@id='backButtonv2']";
 	String calendarsHome = "//span[normalize-space()='Calendars']";
 	String appointmentsTab = "//span[normalize-space()='Appointments']";
@@ -86,7 +82,7 @@ public class BookAppointment3 {
 		driver = new FirefoxDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-//
+
 		wt = new GenericMethod(driver);
 		driver.get(baseUrl);
 
@@ -122,9 +118,9 @@ public class BookAppointment3 {
 		input.sendKeys(randCharcter.randChar());
 		driver.findElement(By.xpath(timezone)).click();
 		
-		Thread.sleep(3000);
 		
 		// continue to booking
+		Thread.sleep(2000);
 		WebElement continueTo = driver.findElement(By.xpath("//button[@class='btn btn-schedule']"));
 		JavascriptExecutor je = (JavascriptExecutor) driver;
 		je.executeScript("arguments[0].scrollIntoView(true)", continueTo);
@@ -151,7 +147,7 @@ public class BookAppointment3 {
 		driver.findElement(By.xpath(calendarsHome)).click();
 		driver.findElement(By.xpath(appointmentsTab)).click();
 		
-		wt.waitForElement(By.xpath(lastAppointments), Duration.ofSeconds(10));
+		wt.waitForElement(By.xpath(lastAppointments), Duration.ofSeconds(20));
 		
 		driver.findElement(By.xpath(appointmentTime));
 		
