@@ -34,8 +34,8 @@ import utilities.randomString;
 public class BookAppointmentCloud {
 	
 	public RemoteWebDriver driver;
-    public String username = "nishantranjan78";
-    public String accesskey = "oyQ4WfFrpdv7KEWzvdaZzvw69LPgVJxbS9CbHIkWpminX6fepk";
+    public String username = "*********";
+    public String accesskey = "***************";
     public String gridURL = "hub.lambdatest.com";
     public String hub;
 	
